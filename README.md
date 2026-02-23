@@ -28,9 +28,13 @@ This project is not just a CRUD demo. It explores how a short-form video platfor
 
 When the application starts for the first time, the database is automatically seeded with:
 Demo Account
+
 Email:    clutchaccount@gmail.com
+
 Password: ClutchPassword123***
+
 Demo Clip
+
 A single clip is seeded into the database:
 Clip ID: 1
 Game: Counter-Strike 2
@@ -54,6 +58,7 @@ Example payload:
  "browserLanguage": "en",
  "devicePlatform": "windows"
 }
+
 Observe what happens:
 
 
