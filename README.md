@@ -26,18 +26,12 @@ This project is not just a CRUD demo. It explores how a short-form video platfor
 —
 
 
-When the application starts for the first time, the database is automatically seeded with:
-Demo Account
+When the application starts for the first time, the database is automatically seeded with a single clip.
 
-Email:    clutchaccount@gmail.com
-
-Password: ClutchPassword123***
-
-Demo Clip
-
-A single clip is seeded into the database:
 Clip ID: 1
+
 Game: Counter-Strike 2
+
 Description: "Insane Donk highlight."
 
 How To Observe The Event-Driven Architecture
@@ -56,36 +50,17 @@ Example payload:
  "deviceId": "demo-device",
  "platform": "web",
  "browserLanguage": "en",
- "devicePlatform": "windows"
-}
+ "devicePlatform": "windows
+ }
 
-Observe what happens:
-
-
-A raw event is appended to the UserEvents table.
-
-
-The materializer background job processes the event.
-
-
-The Likes table and counters are updated asynchronously.
-
-
-Consumer offsets advance.
+Observe what happens. A raw event is appended to the UserEvents table. The materializer background job processes the event. The Likes table and counters are updated asynchronously. Consumer offsets advance.
 
 
 You can inspect:
-UserEvents (append-only event log)
-
-
-EventConsumerOffsets
-
-
-Likes
-
-
-Clips.LikeCount
-
+- UserEvents (append-only event log)
+- EventConsumerOffsets
+- Likes
+- Clips.LikeCount
 
 This allows you to see the full ingestion > compaction > materialization pipeline in action.
 ---
