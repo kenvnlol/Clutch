@@ -78,28 +78,6 @@ Instead of directly mutating entities like `Likes`, `Follows`, `Saves`, etc., th
 
 This mimics a simplified Kafka-style pipeline using SQL + background jobs.
 
----
-
-# Why Raw SQL For Events?
-
-Event ingestion is write-heavy and append-only.
-
-EF Core was benchmarked using NBomber and compared against raw SQL for write-only workloads.
-
-Results showed raw SQL to be significantly more efficient for high-throughput event ingestion scenarios.
-
-Because this event table:
-
-* Is append-only
-* Does not require tracking
-* Does not need change detection
-* Does not need navigation graphs
-
-Raw SQL is a better fit than EF Core for this specific workload.
-
-All other domain modeling continues to use EF Core.
-
----
 
 # Event Compaction
 
